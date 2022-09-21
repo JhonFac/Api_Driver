@@ -1,0 +1,34 @@
+Before to start, you need to install the dependencies:
+`pip install -r requirements.txt`
+
+Next, you need to create the database:
+`python manage.py makemigrations`
+`python manage.py migrate`
+
+Finally, you need to create the superuser (optional):
+`python manage.py createsuperuser`
+
+To have a local env without docker it is recommended to use the following commands:
+
+- `python3 -m venv .env`
+- `. .env-mts/bin/activate`
+- `pip install -r requirements.txt`
+
+To run fixtures data:
+`python manage.py runserver`
+
+
+
+Database relationship:
+
+CUSTOMER            SHEDULE         DRIVER
+    id    ____        id          ___id
+    name      |       driver <---|   name
+    status    |-----> customer       status
+                      time
+                      date
+                      rec_lat
+                      rec_lng
+                      des_lat
+                      des_lng
+                      status            
