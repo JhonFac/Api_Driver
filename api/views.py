@@ -63,16 +63,20 @@ class AllScheduleViewSet(viewsets.ModelViewSet):
         queryset = Schedule.objects.filter(status=True)
         return queryset
 
+
+class SaveScheduleView(APIView):
     # Create schedule
     def post(self, request):
 
         schedule_Serializers = ScheduleSerializers(data=request.data)
         if schedule_Serializers.is_valid():
-            if SimpleQuery.ValidateSheduleDriver(Schedule, schedule_Serializers.data):
+            if SimpleQuery.ValidateSheduleDriver(Schedule, schedule_Serializers):
+                print()
                 schedule_Serializers.save()
                 return Response(schedule_Serializers.data)
             else:
                 return Response({"messague": "the space is occupied"})
+
         return Response(schedule_Serializers.errors)
 
 

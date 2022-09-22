@@ -17,5 +17,6 @@ urlpatterns = [
         name="search_driver",
     ),
     path("time_schedule/<str:date>", views.TimeScheduleView.as_view(), name="time_schedule"),
+    path("saveschedule/", views.SaveScheduleView.as_view(), name="save_schedule"),
     path("", include(router.urls)),
 ]
