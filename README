@@ -1,4 +1,4 @@
-OPTINOAL 
+OPTIONAL 
 
 ## Build Container and image in Docker 
 docker-compose -f docker-compose.yml build
@@ -24,14 +24,14 @@ To have a local env without docker it is recommended to use the following comman
 - `. .env-mts/bin/activate`
 - `pip install -r requirements.txt`
 
-To run fixtures data:
+To run Project:
 `python manage.py runserver`
 
 
 To be able to see the documentation in swagger in the url:
 `http://127.0.0.1:8000/swagger/`
 
-Database relationship:
+Database relation:
 
 CUSTOMER            SHEDULE         DRIVER
     id    ____        id          ___id
